@@ -4,13 +4,13 @@ public class FilmDTO {
 
 	private String title;
 	private String category;
-	private String year;
+	private Integer year;
 
 	public FilmDTO() {
 		super();
 	}
 
-	public FilmDTO(String title, String category, String year) {
+	public FilmDTO(String title, String category, Integer year) {
 		super();
 		this.title = title;
 		this.category = category;
@@ -33,11 +33,11 @@ public class FilmDTO {
 		this.category = category;
 	}
 
-	public String getYear() {
+	public Integer getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}
 
