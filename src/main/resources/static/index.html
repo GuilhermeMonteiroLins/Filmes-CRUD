@@ -2,328 +2,79 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link href="styles/index.css" rel="stylesheet">
-  <title></title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link href="styles/index.css" rel="stylesheet">
+	<title>Lista de Filmes</title>
 </head>
 
 <body>
-  <main class="container">
-    <div class="row">
-      <div class="col-12">
-        <h1>Listagem</h1>
-        <div class="alert alert-primary" role="alert">
-          <h4 class="alert-heading">Área para mensagens de alertas em geral</h4>
-          <hr>
-          <p class="mb-0">TROCAR A COR CONFORME O TIPO DE MENSAGEM</p>
-        </div>
-
-        <div class="row">
-          <div class="col-4">
-            <form class="form-inline">
-              <label class="sr-only" for="txtBusca">Buscar</label>
-              <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="fas fa-search"></i></div>
-                </div>
-                <input type="text" class="form-control" id="txtBusca" placeholder="Buscar" />
-              </div>
-              <button type="submit" class="btn btn-primary mb-2">Buscar</button>
-            </form>
-          </div>
-          <div class="col-8">
-            <form class="form-inline">
-              <label class="mr-1">Filtros</label>
-              <select class="custom-select mb-2 mr-sm-2">
-                <option selected disabled>Campo 1</option>
-                <option value="1">Opção 1</option>
-                <option value="2">Opção 2</option>
-                <option value="3">Opção 3</option>
-              </select>
-              <select class="custom-select mb-2 mr-sm-2">
-                <option selected disabled>Campo 2</option>
-                <option value="A">Opção A</option>
-                <option value="B">Opção B</option>
-                <option value="C">Opção C</option>
-              </select>
-              <select class="custom-select mb-2 mr-sm-2">
-                <option selected disabled>Campo 3</option>
-                <option value="A">Opção X</option>
-                <option value="B">Opção Y</option>
-                <option value="C">Opção Z</option>
-              </select>
-              <button type="submit" class="btn btn-primary mb-2">Aplicar filtros</button>
-            </form>
-          </div>
-          <div class="col-12">
-            <div class="alert alert-dark" role="alert">
-              <p class="mb-0">Resultado da busca por <strong><em>xpto</em></strong> <button
-                  class="btn btn-secondary btn-sm ml-3"><i class="fas fa-times"></i> Limpar</button></p>
-            </div>
-          </div>
-        </div>
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th>&nbsp;</th>
-              <th class="sla"># <i class="fas fa-sort-up text-primary"></i></th>
-              <th>Nome <i class="fas fa-sort"></i></th>
-              <th>Data <i class="fas fa-sort"></i></th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>1</td>
-              <td>Nome do item 1</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>2</td>
-              <td>Nome do item 2</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>3</td>
-              <td>Nome do item 3</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>4</td>
-              <td>Nome do item 4</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>5</td>
-              <td>Nome do item 5</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>6</td>
-              <td>Nome do item 6</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>7</td>
-              <td>Nome do item 7</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>8</td>
-              <td>Nome do item 8</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>9</td>
-              <td>Nome do item 9</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-danger">Desativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Ativar item"><i class="fas fa-toggle-on"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" class="chkItem" /></td>
-              <td>10</td>
-              <td>Nome do item 10</td>
-              <td>30/05/2000</td>
-              <td><span class="badge badge-success">Ativado</span></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Ações disponíveis">
-                  <button type="button" class="btn btn-primary" data-toggle-tooltip="tooltip"" data-placement=" top"
-                    title="Editar"><i class="fas fa-edit"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-placement="top"
-                    title="Desativar item"><i class="fas fa-toggle-off"></i></button>
-                  <button type="button" class="btn btn-danger" data-toggle-tooltip="tooltip" data-toggle="modal"
-                    data-placement="top" data-target="#modalDelete" title="Excluir"><i
-                      class="fas fa-trash"></i></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><input type="checkbox" id="chkTodos" /></td>
-              <td colspan="4">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownAcaoTodos"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Selecione uma ação para os itens
-                    selecionados
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownAcaoTodos">
-                    <button class="dropdown-item" type="button">Ativar todos</button>
-                    <button class="dropdown-item" type="button">Desativar todos</button>
-                    <button class="dropdown-item" type="button">Excluir todos</button>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <button class="btn btn-success btn-block" data-toggle-tooltip="tooltip" data-placement="top"
-                  title="Incluir novo item"><i class="fas fa-plus"></i> Incluir novo</button>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-        <div class="row">
-          <div class="col">
-            <p>Mostrando <strong>1-10</strong> de 99</p>
-          </div>
-          <div class="col text-right">
-            <nav aria-label="Paginação">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                </li>
-                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Próxima</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-        </div>
-      </div>
-  </main>
-  <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalDeleteLabel">Confirmar exclusão</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Confirma a exclusão do item XX?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-danger">Sim</button>
-        </div>
-      </div>
-    </div>
-  </div>
+	<main class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>Lista de Filmes</h1>
+				<div class="row">
+					<div class="col-4">
+						<form class="form-inline">
+							<div class="input-group mb-2 mr-sm-2">
+								<div class="input-group-prepend">
+									<div class="input-group-text"><i class="fas fa-search"></i></div>
+								</div>
+								<input type="text" class="form-control" id="txtBusca" placeholder="Buscar" />
+							</div>
+							<button type="submit" class="btn btn-primary mb-2">Buscar</button>
+						</form>
+						<td>
+							<button class="btn btn-success btn-block" data-toggle-tooltip="tooltip" data-placement="top"
+								title="Incluir novo item"><i class="fas fa-plus"></i> Incluir
+								novo</button>
+						</td>
+					</div>
+				</div>
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th>&nbsp;</th>
+							<th># <i class="fas fa-sort-up text-primary"></i></th>
+							<th>Nome Filme <i class="fas fa-sort"></i></th>
+							<th>Categoria <i class="fas fa-sort"></i></th>
+							<th>Ano</th>
+							<th>Ações</th>
+						</tr>
+					</thead>
+					<tbody id="listFilms">
+					</tbody>
+					<script src="./services/api.js"></script>
+					<script>
+						const url = "http://localhost:8080/film"
+						buscaDados(url).then((resp) => {
+							const elTbody = document.getElementById('listFilms');
+							elTbody.innerHTML = '';
+							console.log(resp);
+							let htmlTr = '';
+							for (const dado of resp.object) {
+								htmlTr +=
+									`<tr>
+											<th>&nbsp;</th>
+											<th>${dado.id}</th>
+											<td>${dado.title}</td>
+											<td>${dado.category}</td>
+											<td>${dado.year}</td>
+											<td>
+												<a href="#" class="btn btn-info">Alterar</a>
+												<button class="btn btn-danger">Excluir</button>
+											</td>
+										</tr>`
+							}
+							elTbody.insertAdjacentHTML('beforeend', htmlTr);
+						})
+					</script>
+					<tfoot>
+				</table>
+	</main>
 </body>
 
 </html>
