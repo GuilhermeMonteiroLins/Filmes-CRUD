@@ -16,17 +16,20 @@
 			<form id="frmAddFilmes">
 				<div class="mb-3">
 					<label for="txtTitulo" class="form-label">Titulo do Filme</label>
-					<input type="text" class="form-control" name="titulo" id="txtNome" placeholder="Titulo do Filme">
+					<input type="text" class="form-control" name="titulo" id="txtNome" placeholder="Titulo do Filme"
+						required>
 				</div>
 				<div class="mb-3">
 					<label for="txtCategoria" class="form-label">Categoria</label>
-					<input type="text" class="form-control" name="categoria" id="txtCategoria" placeholder="Categoria">
+					<input type="text" class="form-control" name="categoria" id="txtCategoria" placeholder="Categoria"
+						required>
 				</div>
 				<div class="mb-3">
 					<label for="txtAno" class="form-label">Ano</label>
-					<input type="number" class="form-control" name="ano" id="txtAno" placeholder="Ano">
+					<input type="number" class="form-control" name="ano" id="txtAno" placeholder="Ano" required>
 				</div>
 				<button class="btn btn-success btn-lg" type="submit">Enviar</button>
+				<button onclick="redirecionar()" class="btn btn-success btn-lg">Cancelar</button>
 			</form>
 		</div>
 	</div>
@@ -37,19 +40,30 @@
 		elFormulario.onsubmit = function (evt) {
 			evt.preventDefault();
 
-			let dados = {
-				title: elFormulario.titulo.value,
-				category: elFormulario.categoria.value,
-				year: Number(elFormulario.ano.value),
-			};
-			console.log(JSON.stringify(dados));
-			enviaDados(url, dados).then(function (resp) {
-				alert(JSON.stringify(resp));
-			}).catch(function (err) {
-				alert(err);
-			});
-		}
+			if (elFormulario.titulo.value !== '' &&
+				elFormulario.categoria.value !== '' &&
+				elFormulario.ano.value !== '') {
 
+				let dados = {
+					title: elFormulario.titulo.value,
+					category: elFormulario.categoria.value,
+					year: Number(elFormulario.ano.value),
+				};
+
+				console.log(JSON.stringify(dados));
+				enviaDados(url, dados).then(function (resp) {
+					alert(JSON.stringify(resp.message + ": ID - " + resp.object));
+					window.location.href = '../index.html';
+				}).catch(function (err) {
+					alert(err);
+				});
+			}
+		}
+	</script>
+	<script>
+		function redirecionar() {
+			window.location.href = '../index.html';
+		}
 	</script>
 </body>
 

@@ -28,8 +28,9 @@
 							<button type="submit" class="btn btn-primary mb-2">Buscar</button>
 						</form>
 						<td>
-							<button class="btn btn-success btn-block" data-toggle-tooltip="tooltip" data-placement="top"
-								title="Incluir novo item"><i class="fas fa-plus"></i> Incluir
+							<button onclick="redirecionar()" class="btn btn-success btn-block"
+								data-toggle-tooltip="tooltip" data-placement="top" title="Incluir novo item"><i
+									class="fas fa-plus"></i> Incluir
 								novo</button>
 						</td>
 					</div>
@@ -64,13 +65,33 @@
 											<td>${dado.category}</td>
 											<td>${dado.year}</td>
 											<td>
-												<a href="#" class="btn btn-info">Alterar</a>
-												<button class="btn btn-danger">Excluir</button>
+												<button onclick="updateDados(${dado.id}) href="../static/pages/filmUpdate.html" class="btn btn-info">Alterar</button>
+												<button onclick="excluiFilmes(${dado.id})" class="btn btn-danger">Excluir</button>
 											</td>
 										</tr>`
 							}
 							elTbody.insertAdjacentHTML('beforeend', htmlTr);
 						})
+					</script>
+					<script>
+						function redirecionar() {
+							window.location.href = '../static/pages/filmAdd.html';
+						}
+					</script>
+
+					<script>
+						function excluiFilmes(id) {
+							const url = "http://localhost:8080/film/delete"
+
+							deletaDados(url, id).then((resp) => {
+								if (resp.status === 202) {
+									location.reload();
+									alert(resp.message)
+								} else {
+									alert(resp.message)
+								}
+							});
+						}
 					</script>
 					<tfoot>
 				</table>

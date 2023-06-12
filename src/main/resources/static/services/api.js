@@ -27,6 +27,7 @@ function buscaDados(urlJson, params, jwt, accept = 'application/json') {
 	});
 }
 
+
 function enviaDados(urlJson, dados) {
 	return new Promise(function(resolve, reject) {
 		let xhr = new XMLHttpRequest();
@@ -44,5 +45,29 @@ function enviaDados(urlJson, dados) {
 			}
 		};
 		xhr.send(JSON.stringify(dados));
+	});
+}
+
+function deletaDados(urlJson, id) {
+	return new Promise(function(resolve, reject) {
+		const xhr = new XMLHttpRequest();
+		
+		let urlAjusted = urlJson + "/" + id;	
+		
+		xhr.open('DELETE', urlAjusted, true);
+		xhr.setRequestHeader('Content-type', 'application/json');
+
+		xhr.onload = function() {
+			if (xhr.status === 200) {
+				const dados = JSON.parse(xhr.responseText);
+				resolve(dados);
+			} else {
+				reject({
+					status: xhr.status,
+					mensagem: 'Erro ao deletar'
+				});
+			}
+		};
+		xhr.send();
 	});
 }
